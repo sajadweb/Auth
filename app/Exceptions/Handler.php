@@ -49,6 +49,8 @@ class Handler extends ExceptionHandler
            "getMessage"=> $exception->getMessage(),
             "getCode"=>  $exception->getCode(),
             "getFile"=>$exception->getFile(),
+            "getLine"=>$exception->getLine(),
+            "getTrace"=>$exception->getTrace(),
         ]);
         return parent::render($request, $exception);
     }
