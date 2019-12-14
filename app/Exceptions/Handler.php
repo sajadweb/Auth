@@ -45,6 +45,11 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        return NotAcceptable406([
+           "getMessage"=> $exception->getMessage(),
+            "getCode"=>  $exception->getCode(),
+            "getFile"=>$exception->getFile(),
+        ]);
         return parent::render($request, $exception);
     }
 }
