@@ -11,6 +11,9 @@
 |
 */
  $router->get('/', function () use ($router) {
-     \Illuminate\Support\Facades\Artisan::call('migrate');
+
      return Accepted202($router->app->version());
  });
+$router->get('/migrate', function () use ($router) {
+    return Accepted202( \Illuminate\Support\Facades\Artisan::call('migrate'));
+});
