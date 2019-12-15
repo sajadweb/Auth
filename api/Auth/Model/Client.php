@@ -11,6 +11,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Client extends Model
 {
     use SoftDeletes,Uuid;
+    protected $guarded = [];
+
     protected $fillable = [
         'name',
         'version',

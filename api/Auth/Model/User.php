@@ -13,16 +13,15 @@ use Laravel\Lumen\Auth\Authorizable;
 class User extends Model implements AuthenticatableContract, AuthorizableContract
 {
     use Authenticatable, Authorizable,SoftDeletes,Uuid;
-    protected $casts = [
-        'data' => 'array',
-    ];
+    protected $guarded = [];
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'data',"id",'password'
+        'name', "id",'password'
     ];
 
 }

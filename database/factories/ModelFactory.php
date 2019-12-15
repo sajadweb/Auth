@@ -26,39 +26,39 @@ $factory->define( \Api\Auth\Model\Client::class, function (Faker\Generator $fake
 });
 
 $factory->define( \Api\Auth\Model\User::class, function (Faker\Generator $faker) {
-    $type=$faker->randomElement(['email', 'phone',"link"]);
-    $data=[];
-    if($type=="phone"){
-        $data=   [
-            [
-                "type" => $type,
-                "phone" => $faker->phoneNumber,
-            ]
-        ];
-    }else if($type=="email"){
-        $data=[
-            [
-                "type" => $type,
-                "email" => $faker->email,
-            ]
-        ];
-    }else{
-        $data=[
-            [
-                "type" => "phone",
-                "phone" => $faker->phoneNumber,
-            ],
-            [
-                "type" => "email",
-                "email" => $faker->email,
-            ]
-        ];
-    }
     return [
         "id"=> $faker->uuid,
         'name' =>$faker->name,
-        'data' => $data,
         'password' =>  $faker->password,
         'remember_token' => $faker->randomLetter(10),
     ];
 });
+//
+//$type=$faker->randomElement(['email', 'phone',"link"]);
+//$data=[];
+//if($type=="phone"){
+//    $data=   [
+//        [
+//            "type" => $type,
+//            "phone" => $faker->phoneNumber,
+//        ]
+//    ];
+//}else if($type=="email"){
+//    $data=[
+//        [
+//            "type" => $type,
+//            "email" => $faker->email,
+//        ]
+//    ];
+//}else{
+//    $data=[
+//        [
+//            "type" => "phone",
+//            "phone" => $faker->phoneNumber,
+//        ],
+//        [
+//            "type" => "email",
+//            "email" => $faker->email,
+//        ]
+//    ];
+//}
